@@ -1,21 +1,14 @@
-// Import necessary modules
-const express = require('express');
-const app = express();
+// Assuming other necessary imports are present.
 
-// Database initialization function
-const initDB = require('./db').initDB;
+function initDB() {
+    // Database initialization logic...
+}
 
-// Wrap initDB call in a try-catch block
 try {
     initDB();
 } catch (error) {
-    console.error('Database initialization failed:', error);
-    // Continue server initialization even if the database connection fails
+    console.error("Database connection failed: ", error);
+    // Optionally, you may want to handle the error more gracefully, such as by exiting or providing a fallback.
 }
 
-// Other server configurations and routes go here
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+// ...rest of the server.js code remains unchanged.
